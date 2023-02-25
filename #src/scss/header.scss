@@ -1,0 +1,92 @@
+.header {
+    &__row {
+        height: 85px;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        justify-content: space-between;
+        color: #555248;
+
+        @media (max-width: $md3+px) {
+            flex-direction: column;
+            padding: 20px 0;
+        }
+    }
+
+    &__logo {
+        flex: 0 0 100px;
+        font-family: "Playfair Display";
+        font-size: 12px;
+        letter-spacing: 0.14em;
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        @media (max-width: $md3+px) {
+            flex: 1 1 auto;
+        }
+    }
+
+    &__menu {
+        flex: 1 1 auto;
+    }
+
+    &__icons {
+        flex: 0 0 100px;
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+
+        @media (max-width: $md3+px) {
+            flex: 1 1 auto;
+        }
+    }
+
+    &__icon {
+        cursor: pointer;
+        position: relative;
+        &_like::after {
+            content: "1";
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform: translate(50%, -50%);
+            color: #1b1a17;
+            width: 13px;
+            height: 13px;
+            font-size: 8px;
+            background-color: #e6c8b4;
+            border-radius: 50%;
+        }
+    }
+}
+
+.menu {
+    &__list {
+        display: flex;
+        justify-content: center;
+        gap: 65px;
+
+        @media (max-width: $md3+px) {
+            justify-content: space-between;
+            gap: 20px;
+        }
+    }
+
+    &__item {
+        cursor: pointer;
+        transition: color 0.3s ease 0s;
+
+        @media (hover: hover) {
+            &:hover {
+                text-decoration: underline;
+                color: #d4b098;
+            }
+        }
+    }
+}

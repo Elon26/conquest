@@ -1,0 +1,167 @@
+.mainScreen {
+    &__body {
+        min-height: calc(100vh - 85px);
+        display: flex;
+
+        @media (max-width: $md3+px) {
+            display: block;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            min-height: 100%;
+        }
+    }
+
+    &__content {
+        position: relative;
+        z-index: 2;
+        flex: 0 0 410px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 65px;
+
+        @media (max-width: $md3+px) {
+            align-items: center;
+            padding-left: 0;
+        }
+    }
+
+    &__title {
+        font-family: "Playfair Display";
+        font-size: 45px;
+        margin-bottom: 15px;
+        position: relative;
+
+        &::before {
+            content: "";
+            width: 50px;
+            height: 1px;
+            background-color: #8b8371;
+            position: absolute;
+            top: 25px;
+            left: -65px;
+
+            @media (max-width: $md3+px) {
+                display: none;
+            }
+        }
+
+        @media (max-width: $md4+px) {
+            text-align: center;
+        }
+    }
+
+    &__subtitle {
+        font-family: "Playfair Display";
+        font-size: 30px;
+        margin-bottom: 40px;
+
+        @media (max-width: $md3+px) {
+            margin-bottom: 10px;
+        }
+    }
+
+    &__text {
+        font-weight: 300;
+        margin-bottom: 65px;
+        line-height: calc(22 / 14);
+        max-width: 260px;
+
+        @media (max-width: $md3+px) {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+    }
+
+    &__button {
+        align-self: start;
+
+        @media (max-width: $md3+px) {
+            align-self: center;
+        }
+    }
+
+    &__bg {
+        flex: 1 1 auto;
+        position: relative;
+
+        @media (max-width: $md3+px) {
+            display: none;
+        }
+    }
+
+    &__watch {
+        position: relative;
+        z-index: 2;
+        height: 100%;
+        text-align: center;
+        img {
+            width: 70%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__circle {
+        position: absolute;
+        top: 0;
+        left: -60px;
+        width: 70%;
+        height: 100%;
+        overflow: hidden;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: -15%;
+            left: 0;
+            width: 190%;
+            height: 130%;
+            background: linear-gradient(180deg, rgba(234, 227, 212, 0) 0%, #eae3d4 100%);
+            border-radius: 50%;
+        }
+    }
+
+    &__sign {
+        position: absolute;
+        font-family: Prata;
+        font-size: 16px;
+
+        &::after {
+            content: "";
+            width: 50px;
+            height: 1px;
+            background-color: #8b8371;
+            position: absolute;
+            top: 5px;
+        }
+
+        &_top {
+            top: 165px;
+            left: 70px;
+
+            &::after {
+                right: -65px;
+            }
+        }
+
+        &_bottom {
+            bottom: 115px;
+            right: 10px;
+
+            &::after {
+                left: -65px;
+            }
+        }
+
+        @media (max-width: $md1+px) {
+            &_top {
+                left: 40px;
+            }
+        }
+
+        @media (max-width: $md2+px) {
+            display: none;
+        }
+    }
+}

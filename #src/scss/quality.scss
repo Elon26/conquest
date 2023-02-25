@@ -1,0 +1,154 @@
+.quality {
+    position: relative;
+
+    &__bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        overflow: hidden;
+    }
+
+    &__bgSide {
+        height: 100%;
+        &_left {
+            flex: 0 0 35%;
+            background-color: #f7f5ef;
+        }
+
+        &_right {
+            flex: 0 0 65%;
+            background-color: #fdfdfb;
+        }
+    }
+
+    &__circle {
+        position: absolute;
+        border: 1px solid rgba(212, 176, 152, 0.5);
+        border-radius: 50%;
+
+        &_small {
+            top: -140px;
+            right: -140px;
+            height: 365px;
+            width: 365px;
+        }
+
+        &_big {
+            bottom: -300px;
+            right: -480px;
+            height: 745px;
+            width: 745px;
+        }
+    }
+}
+
+.slider {
+    position: relative;
+    padding: 50px 0;
+    width: 1000px;
+    height: 500px;
+    @media (max-width: $md1+px) {
+        width: 100%;
+        height: 100%;
+    }
+
+    &__arrow {
+        position: absolute;
+        z-index: 2;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        background: url("../img/slider-arrow_left.png") 50% 50% / 5px 10px no-repeat;
+        background-color: #990606;
+        bottom: 7.5px;
+        left: calc(50% + 10px);
+
+        &_prev {
+            transform: translate(-50px, 0%);
+        }
+
+        &_next {
+            transform: translate(50px, 0%);
+            transform: rotate(180deg);
+        }
+    }
+
+    &__slideNumber {
+        position: absolute;
+        bottom: 15px !important;
+        left: calc(50% + 10px) !important;
+        font-family: Prata;
+        font-size: 12px;
+        transform: translate(-17px, 0%);
+    }
+}
+
+.slide {
+    padding: 50px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 70px;
+
+    @media (max-width: $md2+px) {
+        padding: 40px 0;
+        gap: 20px;
+    }
+
+    @media (max-width: $md3+px) {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    &__img {
+        flex: 0 0 520px;
+        height: 100%;
+
+        img {
+            width: 100%;
+            height: 420px;
+            object-fit: contain;
+        }
+
+        @media (max-width: $md1+px) {
+            flex: 0 0 40%;
+
+            img {
+                height: 350px;
+            }
+        }
+
+        @media (max-width: $md3+px) {
+            img {
+                height: 250px;
+            }
+        }
+    }
+
+    &__content {
+        flex: 1 1 auto;
+    }
+
+    &__title {
+        font-family: "Playfair Display";
+        font-size: 32px;
+        margin-bottom: 40px;
+
+        @media (max-width: $md3+px) {
+            margin-bottom: 10px;
+        }
+    }
+
+    &__text {
+        font-size: 16px;
+        line-height: 1.5;
+        margin-bottom: 45px;
+
+        @media (max-width: $md3+px) {
+            margin-bottom: 10px;
+        }
+    }
+}
